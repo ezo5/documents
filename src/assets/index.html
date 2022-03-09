@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+{{#documents}}
+<div class="border-bottom">
+
+    <table class="text-uppercase text-strong table-no-border margin-bottom-0 border-bottom">
+        <tr>
+            <th class="text-sm">Datum:</th>
+            <th class="text-sm">{{#formatDate}}{{accounting_entry_date}}{{/formatDate}}</th>
+            <th class="text-sm">Firma:</th>
+            <th class="text-sm">{{company}}</th>
+            <th class="text-right text-sm">Částka dokladu:</th>
+            <th class="text-right text-sm">{{#formatNumber}}{{total_amount_tax_included}}{{/formatNumber}} {{currency}}</th>
+            <th class="text-right text-sm">{{#formatNumber}}{{total_amount_domestic_tax_included}}{{/formatNumber}} CZK</th>
+        </tr>
+        <tr>
+            <th class="text-sm">Číslo:</th>
+            <th class="text-sm">{{document_number}}</th>
+            <th class="text-sm">Typ:</th>
+            <th class="text-sm">{{type}}</th>
+            <th class="text-right text-sm">Zbývá uplatnit:</th>
+            <th class="text-right text-sm">{{#formatNumber}}{{remaining_amount}}{{/formatNumber}} {{currency}}</th>
+            <th class="text-right text-sm">{{#formatNumber}}{{domestic_remaining_amount}}{{/formatNumber}} CZK</th>
+        </tr>
+    </table>
+
+
+    <table class="table-no-border">
+        <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Typ</th>
+            <th colspan="3">Doklad</th>
+            <th class="text-right">Částka</th>
+            <th class="text-right">Částka [CZK]</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#invoices}}
+        <tr>
+            <td>{{#formatDate}}{{accounting_entry_date}}{{/formatDate}}</td>
+            <td>{{type}}</td>
+            <td colspan="3">{{document_number}}</td>
+            <td class="text-right border-bottom-0">{{#formatNumber}}{{document_amount}}{{/formatNumber}} {{currency}}</td>
+            <td class="text-right border-bottom-0">{{#formatNumber}}{{domestic_document_amount}}{{/formatNumber}}</td>
+        </tr>
+        {{/invoices}}
+        <tr>
+            <td colspan="5"></td>
+            <td class="text-right border-top text-strong">{{#formatNumber}}{{document_amount}}{{/formatNumber}} {{payment_currency}}</td>
+            <td class="text-right border-top text-strong">{{#formatNumber}}{{domestic_document_amount}}{{/formatNumber}}</td>
+        </tr>
+        {{#payments}}
+        <tr>
+            <td>{{#formatDate}}{{payment_date}}{{/formatDate}}</td>
+            <td></td>
+            <td colspan="3">{{payment_number}}</td>
+            <td class="text-right">{{#formatNumber}}{{payment_amount}}{{/formatNumber}} {{payment_currency}}</td>
+            <td class="text-right">{{#formatNumber}}{{domestic_document_amount}}{{/formatNumber}}</td>
+        </tr>
+        {{/payments}}
+        <tr>
+            <td colspan="5"></td>
+            <td class="text-right border-top text-strong">{{#formatNumber}}{{document_amount}}{{/formatNumber}} {{payment_currency}}</td>
+            <td class="text-right border-top text-strong">{{#formatNumber}}{{domestic_document_amount}}{{/formatNumber}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{{/documents}}
+</body>
