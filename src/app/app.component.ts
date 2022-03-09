@@ -5,7 +5,7 @@ import {DatePipe, DecimalPipe} from '@angular/common';
 @Component({
     selector: 'app-root',
     template: `
-        <div [innerHTML]="template | mustache: data"></div>`,
+        <div [innerHTML]="template| mustache: data | safeHtml"></div>`,
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
 })
@@ -33,7 +33,7 @@ export class AppComponent {
         });
 
         this.httpClient.get('assets/index.html', {responseType: 'text'}).subscribe(html => {
-            this.template = html.toString();
+            this.template = html;
             this.cdr.markForCheck();
         });
     }

@@ -6,6 +6,7 @@ import {MustachePipe} from './mustache.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import {DatePipe, DecimalPipe, registerLocaleData} from '@angular/common';
 import cs from '@angular/common/locales/cs';
+import {SafeHtmlPipe} from './safe-html.pipe';
 
 registerLocaleData(cs);
 
@@ -13,6 +14,7 @@ registerLocaleData(cs);
     declarations: [
         AppComponent,
         MustachePipe,
+        SafeHtmlPipe
     ],
     imports: [
         BrowserModule,
