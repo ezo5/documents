@@ -53,12 +53,12 @@ h6 {
 }
 
 ul {
-  padding: 10px;
+    padding: 10px;
 }
 
 img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 /* ==== GRID SYSTEM ==== */
@@ -430,4 +430,44 @@ header h3,
 header div {
     line-height: 1.2;
     margin: 0;
+}
+
+
+
+.list-total .total {
+    background: #f8f8f9;
+    padding: 4px;
+    font-weight: bold;
+    margin: 0;
+    font-size: 16px;
+}
+
+footer {
+    display: flex;
+    margin-top: 10px;
+    page-break-inside: avoid;
+}
+
+footer .item {
+    min-width: 25%;
+    max-width: 25%;
+    border-right: solid 1px #e4e5e9;
+    text-align: center;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .item-body {
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+}
+
+footer .item i {
+    margin-bottom: 10px;
+}
+
+footer .item:last-child {
+    border: 0;
 }

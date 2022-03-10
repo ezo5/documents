@@ -1,0 +1,433 @@
+/* UNIVERSAL */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    -webkit-print-color-adjust: exact;
+}
+
+/* ROOT FONT STYLES */
+
+* {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #333447;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+}
+
+h6 {
+    font-size: 0.5rem;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* ==== GRID SYSTEM ==== */
+
+.row {
+    position: relative;
+    width: 100%;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    display: flex;
+}
+
+.row [class^='col'] {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    width: 100%;
+}
+
+.col-1 {
+    min-width: 4.33%;
+}
+
+.col-2 {
+    min-width: 12.66%;
+}
+
+.col-3 {
+    min-width: 21%;
+}
+
+.col-4 {
+    min-width: 29.33%;
+}
+
+.col-5 {
+    min-width: 37.66%;
+}
+
+.col-6 {
+    min-width: 46%;
+}
+
+.col-7 {
+    min-width: 54.33%;
+}
+
+.col-8 {
+    min-width: 62.66%;
+}
+
+.col-9 {
+    min-width: 71%;
+}
+
+.col-10 {
+    min-width: 79.33%;
+}
+
+.col-11 {
+    min-width: 87.66%;
+}
+
+.col-12 {
+    min-width: 96%;
+}
+
+/* ==== TABLES ==== */
+
+table {
+    background-color: transparent;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    page-break-inside: avoid;
+}
+
+table col[class*='col-'] {
+    position: static;
+    display: table-column;
+    float: none;
+}
+
+table td[class*='col-'],
+table th[class*='col-'] {
+    position: static;
+    display: table-cell;
+    float: none;
+}
+
+th {
+    text-align: left;
+    text-transform: uppercase;
+    background: whitesmoke;
+    font-size: 1.1rem;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+    padding: 3px;
+    line-height: 1.2;
+    vertical-align: middle;
+    border-top: 1px solid #dddddd;
+}
+
+table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dddddd;
+    padding: 6px 3px;
+}
+
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+}
+
+table > tbody + tbody {
+    border-top: 2px solid #dddddd;
+}
+
+.table-bordered {
+    border: 1px solid #dddddd;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+    border: 1px solid #dddddd;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+    border-bottom-width: 2px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-no-border > thead > tr > th,
+.table-no-border > tbody > tr > th,
+.table-no-border > tfoot > tr > th,
+.table-no-border > thead > tr > td,
+.table-no-border > tbody > tr > td,
+.table-no-border > tfoot > tr > td {
+    border: none;
+}
+
+/* ==== HELPERS ==== */
+
+.background-grey {
+    background: whitesmoke;
+}
+
+.margin {
+    margin: 20px;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.margin-top {
+    margin-top: 20px !important;
+}
+
+.margin-right {
+    margin-right: 20px !important;
+}
+
+.margin-bottom {
+    margin-bottom: 20px !important;
+}
+
+.margin-left {
+    margin-left: 20px !important;
+}
+
+.margin-top-0 {
+    margin-top: 0 !important;
+}
+
+.margin-right-0 {
+    margin-right: 0 !important;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0 !important;
+}
+
+.margin-left-0 {
+    margin-left: 0 !important;
+}
+
+.padding {
+    padding: 20px;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.padding-top {
+    padding-top: 20px !important;
+}
+
+.padding-right {
+    padding-right: 20px !important;
+}
+
+.padding-bottom {
+    padding-bottom: 20px !important;
+}
+
+.padding-left {
+    padding-left: 20px !important;
+}
+
+.padding-top-0 {
+    padding-top: 0 !important;
+}
+
+.padding-right-0 {
+    padding-right: 0 !important;
+}
+
+.padding-bottom-0 {
+    padding-bottom: 0 !important;
+}
+
+.padding-left-0 {
+    padding-left: 0 !important;
+}
+
+.border-top {
+    border-top: 1px solid #dddddd !important;
+}
+
+.border-right {
+    border-right: 1px solid #dddddd !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dddddd !important;
+}
+
+.border-left {
+    border-left: 1px solid #dddddd !important;
+}
+
+.border-0 {
+    border: none !important;
+}
+
+.border-top-0 {
+    border-top: none !important;
+}
+
+.border-right-0 {
+    border-right: none !important;
+}
+
+.border-bottom-0 {
+    border-bottom: none !important;
+}
+
+.border-left-0 {
+    border-left: none !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-light {
+    font-weight: 300;
+}
+
+.text-regular {
+    font-weight: 400;
+}
+
+.text-strong {
+    font-weight: 700;
+}
+
+/* POSITIONING */
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-sm {
+    font-size: 0.8rem;
+}
+
+.text-lg {
+    font-size: 1.55rem;
+}
+
+.text-xl {
+    font-size: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-v-center {
+    align-items: center;
+}
+
+/* ==== PARTIALS ==== */
+
+header {
+    display: flex;
+    background: whitesmoke;
+    padding: .5rem;
+    vertical-align: center;
+    align-items: center;
+    border-bottom: solid 2px #ddd;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header h3,
+header div {
+    line-height: 1.2;
+    margin: 0;
+}

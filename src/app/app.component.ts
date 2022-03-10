@@ -4,21 +4,14 @@ import {DatePipe, DecimalPipe} from '@angular/common';
 
 @Component({
     selector: 'app-root',
-    template: `
-        <div [innerHTML]="template| mustache: data | safeHtml"></div>`,
-    styleUrls: ['./app.component.css'],
+    template: ` <div [innerHTML]="template | mustache: data | safeHtml"></div>`,
     encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
     public data: object = {};
     public template = '';
 
-    constructor(
-        private cdr: ChangeDetectorRef,
-        private httpClient: HttpClient,
-        private datePipe: DatePipe,
-        private decimalPipe: DecimalPipe) {
-
+    constructor(private cdr: ChangeDetectorRef, private httpClient: HttpClient, private datePipe: DatePipe, private decimalPipe: DecimalPipe) {
         this.httpClient.get('assets/data.json').subscribe(data => {
             this.data = {
                 ...data,
@@ -27,7 +20,7 @@ export class AppComponent {
                 },
                 formatNumber: () => (text: string, render: (text: string) => any) => {
                     return decimalPipe.transform(render(text)) as string;
-                },
+                }
             };
             this.cdr.markForCheck();
         });
