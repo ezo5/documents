@@ -18,8 +18,8 @@ export class AppComponent {
                 formatDate: () => (text: string, render: (text: string) => any) => {
                     return datePipe.transform(render(text), 'dd.MM.YYYY') as string;
                 },
-                formatNumber: () => (text: string, render: (text: string) => any) => {
-                    return decimalPipe.transform(render(text)) as string;
+                formatNumber: () => (text: string, render: (text: any) => any) => {
+                    return decimalPipe.transform(render(parseInt(text, 10))) || render(text) as string;
                 }
             };
             this.cdr.markForCheck();
