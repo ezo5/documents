@@ -1,49 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-    </head>
-    <body>
-        <header>
-            <div class="col-4">
-                <div class="row flex flex-v-center">
-                    <div class="col-4">
-                        <img src="{{ logo_url }}" />
-                    </div>
+<header>
+    <div class="header-address">
+        <div>
+            <img src="{{#queryString}}{{ logoUrl }}{{/queryString}}" />
+        </div>
 
-                    <ul class="col-8">
-                        <li>{{ company_address_name }}</li>
-                        <li>{{ company_address_line_1 }}</li>
-                        <li>{{ company_address_line_2 }}</li>
-                        <li>IČ: {{ company_state_id }}</li>
-                        <li>DIČ: {{ company_vat_no }}</li>
-                    </ul>
-                </div>
+        <ul>
+            <li>{{ myBillingAddress.name }}</li>
+            <li>{{ myBillingAddress.addressLine }}</li>
+            <li>{{ myBillingAddress.zip }}, {{ myBillingAddress.city }}</li>
+            <li>IČ: {{ myBillingAddress.stateIdentNo }}</li>
+            <li>DIČ: {{ myBillingAddress.vatNo }}</li>
+        </ul>
+    </div>
+
+    <h2 class="header-title">{{ title }}</h2>
+
+    <div class="header-info">
+        <div class="spacer"></div>
+
+        <div>
+            <div class="flex flex-v-center">
+                <div class="text-right">{{ context_label }}:&nbsp;&nbsp;</div>
+                <div class="text-strong">{{ context_value }}</div>
             </div>
 
-            <h2 class="col-4 text-center text-uppercase">{{ title }}</h2>
-
-            <div class="col-4 text-right">
-                <div class="row">
-                    <div class="col-6 text-right">{{ context_label }}:</div>
-                    <div class="col-6 text-strong">{{ context_value }}</div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6 text-right">Datum tisku:</div>
-                    <div class="col-6 text-strong">{{ today }}</div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6 text-right">Sestavil:</div>
-                    <div class="col-6 text-strong">{{ printedBy }}</div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6 text-right">Strana:</div>
-                    <div class="col-6"><span class="page"></span> z <span class="topage"></span></div>
-                </div>
+            <div class="flex flex-v-center">
+                <div class="text-right">Datum tisku:&nbsp;&nbsp;</div>
+                <div class="text-strong">{{#formatDate}}{{ today }}{{/formatDate}}</div>
             </div>
-        </header>
-    </body>
-</html>
+
+            <div class="flex flex-v-center">
+                <div class="text-right">Sestavil:&nbsp;&nbsp;</div>
+                <div class="text-strong">{{ printedBy }}</div>
+            </div>
+
+            <div class="flex flex-v-center">
+                <div class="text-right">Strana:&nbsp;&nbsp;</div>
+                <div class="text-strong"><span class="page"></span> z <span class="topage"></span></div>
+            </div>
+        </div>
+    </div>
+</header>

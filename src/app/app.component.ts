@@ -20,12 +20,15 @@ export class AppComponent {
                 },
                 formatNumber: () => (text: string, render: (text: any) => any) => {
                     return decimalPipe.transform(render(parseInt(text, 10))) || render(text) as string;
+                },
+                queryString: () => (text: string, render: (text: any) => any) => {
+                    return 'http://localhost:82/' + render(text);
                 }
             };
             this.cdr.markForCheck();
         });
 
-        this.httpClient.get('assets/index.html', {responseType: 'text'}).subscribe(html => {
+        this.httpClient.get('assets/header.html', {responseType: 'text'}).subscribe(html => {
             this.template = html;
             this.cdr.markForCheck();
         });

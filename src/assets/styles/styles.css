@@ -2,7 +2,6 @@
 
 html,
 body {
-    height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -63,19 +62,83 @@ img {
 
 /* ==== GRID SYSTEM ==== */
 
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .row {
+    margin-right: -1rem;
+    margin-left: 0rem;
+}
+.row-no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+.row-no-gutters [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+.col-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
     position: relative;
-    width: 100%;
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-    display: flex;
+    min-height: 1px;
+    padding-right: 0rem;
+    padding-left: 1rem;
 }
-
-.row [class^='col'] {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-
 .col-1,
 .col-2,
 .col-3,
@@ -88,55 +151,61 @@ img {
 .col-10,
 .col-11,
 .col-12 {
+    float: left;
+}
+.col-12 {
     width: 100%;
 }
-
-.col-1 {
-    min-width: 4.33%;
-}
-
-.col-2 {
-    min-width: 12.66%;
-}
-
-.col-3 {
-    min-width: 21%;
-}
-
-.col-4 {
-    min-width: 29.33%;
-}
-
-.col-5 {
-    min-width: 37.66%;
-}
-
-.col-6 {
-    min-width: 46%;
-}
-
-.col-7 {
-    min-width: 54.33%;
-}
-
-.col-8 {
-    min-width: 62.66%;
-}
-
-.col-9 {
-    min-width: 71%;
-}
-
-.col-10 {
-    min-width: 79.33%;
-}
-
 .col-11 {
-    min-width: 87.66%;
+    width: 91.66666667%;
+}
+.col-10 {
+    width: 83.33333333%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-8 {
+    width: 66.66666667%;
+}
+.col-7 {
+    width: 58.33333333%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-5 {
+    width: 41.66666667%;
+}
+.col-4 {
+    width: 33.33333333%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-2 {
+    width: 16.66666667%;
+}
+.col-1 {
+    width: 8.33333333%;
 }
 
-.col-12 {
-    min-width: 96%;
+.clearfix:before,
+.clearfix:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after {
+    display: table;
+    content: ' ';
+}
+.clearfix:after,
+.container:after,
+.container-fluid:after,
+.row:after {
+    clear: both;
 }
 
 /* ==== TABLES ==== */
@@ -408,23 +477,56 @@ table > tbody + tbody {
     font-size: 2rem;
 }
 
+.spacer {
+    flex: 1 1 auto;
+}
+
 .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .flex-v-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 /* ==== PARTIALS ==== */
 
+/*HEADER*/
+
 header {
-    display: flex;
     background: whitesmoke;
-    padding: .5rem;
-    vertical-align: center;
-    align-items: center;
+    padding: 0.5rem;
     border-bottom: solid 2px #ddd;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.header-address {
+    flex: 4;
+    display: flex;
+    align-items: center;
+}
+
+.header-address img {
+    max-width: 100px;
+    margin-right: 0.5rem;
+}
+
+.header-info {
+    flex: 4;
+    display: flex;
+}
+
+.header-title {
+    flex: 4;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0.5rem;
 }
 
 header ul {
@@ -439,17 +541,11 @@ header div {
     margin: 0;
 }
 
-
-
-.list-total .total {
-    background: #f8f8f9;
-    padding: 4px;
-    font-weight: bold;
-    margin: 0;
-    font-size: 16px;
-}
+/*FOOTER*/
 
 footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-top: 10px;
     page-break-inside: avoid;
@@ -461,13 +557,22 @@ footer .item {
     border-right: solid 1px #e4e5e9;
     text-align: center;
     min-height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 footer .item-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0.5rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
