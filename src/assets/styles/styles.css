@@ -541,6 +541,26 @@ header div {
     margin: 0;
 }
 
+header.header-narrow {
+    justify-content: space-between;
+    align-items: end;
+}
+
+header.header-narrow > div {
+    min-width: 25%;
+    max-width: 25%;
+}
+
+header.header-narrow > div:nth-child(2) {
+    min-width: 50%;
+    max-width: 50%;
+    justify-content: center;
+}
+
+header.header-narrow h2 {
+    line-height: 1.2;
+}
+
 /*FOOTER*/
 
 footer {

@@ -48,7 +48,7 @@
     "prettier": {
         "singleQuote": true,
         "tabWidth": 4,
-        "printWidth": 250,
+        "printWidth": 350,
         "bracketSpacing": false,
         "trailingComma": "none",
         "arrowParens": "avoid"

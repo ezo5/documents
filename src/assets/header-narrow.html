@@ -1,0 +1,35 @@
+<header class="header-narrow">
+    <div>
+        <h2 class="margin-0">{{ title }}</h2>
+        {{#subtitle}}
+        <div>{{subtitle}}</div>
+        {{/subtitle}}
+    </div>
+
+    <div class="flex flex-v-center">
+        {{ #contextValue1 }}
+        <div class="flex flex-v-center margin-right">
+            <div class="text-right">{{ contextLabel1 }}:&nbsp;&nbsp;</div>
+            <div class="text-strong">{{ contextValue1 }}</div>
+        </div>
+        {{ /contextValue1 }} {{ #contextValue2 }}
+        <div class="flex flex-v-center">
+            <div class="text-right">{{ contextLabel2 }}:&nbsp;&nbsp;</div>
+            <div class="text-strong">{{ contextValue2 }}</div>
+        </div>
+        {{ /contextValue2 }}
+    </div>
+
+    <div>
+        <div class="flex flex-v-center">
+            <div class="text-right">Strana:&nbsp;&nbsp;</div>
+            <div class="text-strong"><span class="page"></span> z <span class="topage"></span></div>
+        </div>
+        {{ #createdAt }}
+        <div class="flex flex-v-center">
+            <div class="text-right">Datum tisku:&nbsp;&nbsp;</div>
+            <div class="text-strong">{{#formatDate}} {{ createdAt }} {{/formatDate}}</div>
+        </div>
+        {{ /createdAt }}
+    </div>
+</header>
